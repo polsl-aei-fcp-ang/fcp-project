@@ -5,6 +5,36 @@
 #include "functions.h"
 #include "structures.h"
 
+void colour_nodes(graph & g)
+{
+    auto number_of_nodes_without_colour = g.nodes.size();
+
+    unsigned int colour = 0;
+    while (number_of_nodes_without_colour > 0)
+    {
+        ++colour;
+        for (auto & [name, node_info] : g.nodes)
+        {
+            auto node_colour = node_info.colour;
+            if (node_colour == 0)
+            {
+                bool colouring_possible = true;
+                for (const std::string & neighbour : node_info.neighbours)
+                {
+                    auto neighbour_colour = g.nodes[neighbour].colour;
+                    if (neighbour_colour == colour)
+                        colouring_possible = false;
+                }
+                if (colouring_possible)
+                {
+                    node_info.colour = colour;
+                    --number_of_nodes_without_colour;
+                }
+            }
+        }
+    }
+}
+
 void print(const graph & g)
 {
     for (const auto & [name, node_info] : g.nodes)   // vertex is a node, node is a vertex

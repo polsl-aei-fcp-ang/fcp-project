@@ -22,7 +22,9 @@ int main (int number_params, char * params[])
         print(conflicts);
         // void print(const graph & g);
 
-        // colour_nodes(conflicts);
+        colour_nodes(conflicts);
+        // void colour_nodes(graph & g);
+
         // print_colours(conflicts, input_output_names.second);
 
     }

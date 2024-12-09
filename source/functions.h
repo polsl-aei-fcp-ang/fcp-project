@@ -4,6 +4,8 @@
 #include <string>
 #include "structures.h"
 
+void colour_nodes(graph & g);
+
 void print(const graph & g);
 
 graph read_conflicts (const std::string & input_file_name);
