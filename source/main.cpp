@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "functions.h"
+#include "structures.h"
 
 int main (int number_params, char * params[])
 {

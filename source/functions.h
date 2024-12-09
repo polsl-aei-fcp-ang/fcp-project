@@ -2,6 +2,7 @@
 #define FUNCTIONS_H
 
 #include <string>
+#include "structures.h"
 
 graph read_conflicts (const std::string & input_file_name);
 

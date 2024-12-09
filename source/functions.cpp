@@ -2,6 +2,16 @@
 #include <iostream>
 
 #include "functions.h"
+#include "structures.h"
+
+graph read_conflicts(const std::string& input_file_name)
+{
+    graph result;
+
+
+    return result;
+}
+
 
 void help(char * params[])
 {
