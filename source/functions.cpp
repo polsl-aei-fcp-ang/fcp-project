@@ -3,10 +3,10 @@
 
 #include "functions.h"
 
-void help()
+void help(char * params[])
 {
     std::cout << "usage:" << std::endl;
-    std::cout << "program_name  input_file_name output_file_name" << std::endl;
+    std::cout << params[0] << " input_file_name output_file_name" << std::endl;
 }
 
 std::pair<std::string, std::string> read_names_of_files(int number_params, char * params[])

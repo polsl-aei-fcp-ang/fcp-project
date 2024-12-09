@@ -22,8 +22,8 @@ int main (int number_params, char * params[])
     }
     else
     {
-      help();
-      // void help();
+      help(params);
+      // void help(char * params[]);
     }
 
     return 0;
