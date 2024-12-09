@@ -15,7 +15,9 @@ int main (int number_params, char * params[])
     if (not input_output_names.first.empty() and not input_output_names.second.empty())
     {
         // OK
-        // graph conflicts = read_conflicts(input_output_names.first);
+        graph conflicts = read_conflicts(input_output_names.first);
+        // graph read_conflicts (const std::string & input_file_name);
+
         // colour_nodes(conflicts);
         // print_colours(conflicts, input_output_names.second);
 
