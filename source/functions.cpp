@@ -5,6 +5,28 @@
 #include "functions.h"
 #include "structures.h"
 
+void print_colours (const graph & g, const std::string & output_file_name)
+{
+    std::ofstream file (output_file_name);
+    if (file)
+    {
+
+        for (unsigned int colour = 1; colour <= g.number_of_colours; ++colour)
+        {
+            file << "sector " << colour << " : ";
+
+            for (const auto & [ name, node_info ] : g.nodes)
+            {
+                if (node_info.colour == colour)
+                {
+                    file << name << " ";
+                }
+            }
+            file << std::endl;
+        }
+    }
+}
+
 void colour_nodes(graph & g)
 {
     auto number_of_nodes_without_colour = g.nodes.size();
@@ -33,6 +55,7 @@ void colour_nodes(graph & g)
             }
         }
     }
+    g.number_of_colours = colour;
 }
 
 void print(const graph & g)

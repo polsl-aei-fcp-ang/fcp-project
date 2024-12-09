@@ -14,6 +14,7 @@ struct graph
     };
 
     std::map<std::string, node> nodes;
+    unsigned number_of_colours = 0;
 };
 
 #endif

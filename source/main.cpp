@@ -24,9 +24,11 @@ int main (int number_params, char * params[])
 
         colour_nodes(conflicts);
         // void colour_nodes(graph & g);
+        print(conflicts);
 
-        // print_colours(conflicts, input_output_names.second);
 
+        print_colours(conflicts, input_output_names.second);
+        //  void print_colours (const graph & g, const std::string & output_file_name);
     }
     else
     {

@@ -4,6 +4,8 @@
 #include <string>
 #include "structures.h"
 
+void print_colours (const graph & g, const std::string & output_file_name);
+
 void colour_nodes(graph & g);
 
 void print(const graph & g);

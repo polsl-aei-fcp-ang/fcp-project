@@ -10,11 +10,15 @@ Brahmaputra  Ubangi
 Madeira  Putumayo
 Mahanadi  Marañón 
 Peace  Mackenzie 
+Peace  Iriri
+Peace Ruki
+Peace Putumayo
 Iriri  Sangha 
 Jialing  Ituí 
 Barito  Ruki 
 Huallaga  Putumayo
 Pastaza  Godavari 
+Mississippi Orinoco
 Peace  Benue 
 Inírida  Meghna 
 Ganges  Meta 
