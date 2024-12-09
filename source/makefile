@@ -30,6 +30,8 @@ debug_folder=_debug
 
 release : $(release_folder) $(release_folder)/main
 	./$(release_folder)/main
+	./$(release_folder)/main ../data/input.txt  ../results/output.txt
+	./$(release_folder)/main ../data/input.txt  ../results/output.txt  1234567
 
 debug : $(debug_folder) $(debug_folder)/main
 	valgrind --leak-check=yes ./$(debug_folder)/main
@@ -43,6 +45,10 @@ $(debug_folder) :
 
 # kompilacja zrodel:
 
+$(release_folder)/functions.o : functions.cpp
+	$(kompilator) $(standard) $(release) $(optRelease) $(rownoleglosc) $(errors) -c -o $@ $^
+$(debug_folder)/functions.o : functions.cpp
+	$(kompilator) $(standard) $(debug) $(optyDebug) $(rownoleglosc) $(errors) -c -o $@ $^
 $(release_folder)/main.o : main.cpp
 	$(kompilator) $(standard) $(release) $(optRelease) $(rownoleglosc) $(errors) -c -o $@ $^
 $(debug_folder)/main.o : main.cpp
@@ -50,10 +56,10 @@ $(debug_folder)/main.o : main.cpp
 
 # linkowanie:
 
-$(release_folder)/main : $(release_folder)/main.o 
+$(release_folder)/main : $(release_folder)/functions.o $(release_folder)/main.o 
 	$(kompilator) $(standard) $(release) $(optRelease) $(rownoleglosc) $(errors) -o $@ $^
 
-$(debug_folder)/main : $(debug_folder)/main.o 
+$(debug_folder)/main : $(debug_folder)/functions.o $(debug_folder)/main.o 
 	$(kompilator) $(standard) $(debug) $(optDebug) $(rownoleglosc) $(errors) -o $@ $^
 
 # usuniecie plikow skompilowanych:
