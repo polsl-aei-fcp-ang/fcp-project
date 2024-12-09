@@ -9,7 +9,7 @@ struct graph
 {
     struct node
     {
-        unsigned int colour;
+        unsigned int colour = 0;
         std::vector<std::string> neighbours;
     };
 

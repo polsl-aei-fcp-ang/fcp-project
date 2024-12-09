@@ -19,6 +19,9 @@ int main (int number_params, char * params[])
         graph conflicts = read_conflicts(input_output_names.first);
         // graph read_conflicts (const std::string & input_file_name);
 
+        print(conflicts);
+        // void print(const graph & g);
+
         // colour_nodes(conflicts);
         // print_colours(conflicts, input_output_names.second);
 
